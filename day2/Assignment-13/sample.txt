@@ -1,0 +1,1 @@
+Description: In this assignment, you will work with file reading and error handling in Go. You'll create a simple program to read a text file, count the number of words, and handle potential errors that may occur during the process.

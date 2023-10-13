@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func compare(slice1, slice2 []int) bool {
-	sort.Ints(slice1)
-	sort.Ints(slice2)
+	// sort.Ints(slice1)
+	// sort.Ints(slice2)
 
 	//var count bool = false
 
@@ -27,7 +26,7 @@ func compare(slice1, slice2 []int) bool {
 
 func main() {
 	var slice1 []int = []int{1, 2, 3, 4, 5, 6}
-	var slice2 []int = []int{1, 2, 3, 4, 6, 7}
+	var slice2 []int = []int{1, 2, 3, 4, 5, 6}
 
 	result := compare(slice1, slice2)
 
