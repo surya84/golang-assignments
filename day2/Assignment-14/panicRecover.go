@@ -2,25 +2,28 @@ package main
 
 import "fmt"
 
-func divide(num1, num2 int) int {
-	//defer fmt.Println("fdm")
-	result := num1 / num2
-	return result
-
+func Divide(a int, b int) int {
+	if b == 0 {
+		panic("denominator is zero")
+	}
+	return a / b
 }
 
-func safeDivide() {
-	divide(10, 2)
-	msg := recover()
+func safeDivide(a int, b int) int {
+	defer errorRecover()
 
-	if msg != nil {
-		fmt.Println(msg)
-		fmt.Println("recovered from panic")
+	return Divide(a, b)
+}
+func errorRecover() {
+	err := recover()
+	if err != nil {
+		fmt.Println("Panic Issue...")
 	}
 }
-
 func main() {
-	//safeDivide()
-	defer fmt.Println("fdm")
-	fmt.Println("exiting from main")
+
+	fmt.Println(safeDivide(8, 0))
+	fmt.Println(safeDivide(9, 3))
+	fmt.Println("End of Main and Program")
+
 }
